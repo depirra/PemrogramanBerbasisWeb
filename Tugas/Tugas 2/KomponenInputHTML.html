@@ -1,0 +1,57 @@
+<head>
+  <title>Formulir Pendaftaran</title>
+  <meta charset="UTF-8"></meta>
+  <link rel="stylesheet" href="style.css"></link>
+  <script src="script.js"></script>
+</head>
+
+<body>
+    <table>
+        <tr>
+           <td>Nama:</td> 
+           <td><input type="text" name="nama"></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="text" name="email" required></td>
+        </tr>
+        <tr>
+            <td>Jenis Kelamin:</td>
+            <td>
+                <label><input type="radio" name="jeniskelamin" value="male">Laki-laki</label>
+                <label><input type="radio" name="jeniskelamin" value="female">Perempuan</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Hobi:</td>
+            <td>
+                <label><input type="checkbox" name="hobi" value="musik">Musik</label>
+                <label><input type="checkbox" name="hobi" value="olahraga">Olahraga</label>
+            </td>
+        </tr>
+        <tr>
+            <td>Pilih Kota:</td>
+            <td>
+                <select name="pilihan">
+                    <option value="1">Jakarta</option>
+                    <option value="2">Karawang</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Upload Foto:</td>
+            <td>
+                <form action="upload.php" method="post" enctype="multipart/form-data">
+                    <button type="submit">Choose File</button>
+                    <label for="file">No file chosen</label>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">Daftar</button>
+            </td>
+        </tr>
+    </table>
+</body>
+
