@@ -1,6 +1,5 @@
 <?php
-include 'koneksi_db.php';
-
+include '../koneksi_db.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    $judul = $_POST['judul'];

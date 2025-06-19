@@ -1,24 +1,24 @@
 <?php
 session_start();
 if (!isset($_SESSION['login_Un51k4'])) {
-    header("Location: login.php?message=" . urlencode("Silakan login dulu."));
+    header("Location: login.php");
     exit();
 }
 ?>
 
-<?php include 'proses_index.php'; ?>
+<?php include '../proses_index.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-   <title>Daftar Buku - Toko Buku Online</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+   <title>Hapus Buku</title>
 </head>
 <body>
-   <?php include 'nav.php'; ?>
    <div class="container mt-4">
        <h2>Daftar Buku</h2>
+
 
        <!-- Form Pencarian -->
        <form method="get" class="row g-3 mb-4">
@@ -46,7 +46,7 @@ if (!isset($_SESSION['login_Un51k4'])) {
                    <th>ID</th>
                    <th>Judul</th>
                    <th>Penulis</th>
-                    <th>Tahun Terbit</th>
+                   <th>Tahun Terbit</th>
                    <th>Harga</th>
                </tr>
            </thead>
@@ -59,8 +59,7 @@ if (!isset($_SESSION['login_Un51k4'])) {
                    <td><?php echo $row['Tahun_Terbit'] ?></td>
                    <td>Rp<?php echo number_format($row['Harga'], 2) ?></td>
                    <td>
-                       <a href="buku/form_edit.php?id=<?php echo $row['ID'] ?>" class="btn btn-sm btn-warning">Edit</a>
-                       <a href="buku/proses_hapus.php?id=<?php echo $row['ID'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
+                       <a href="proses_hapus.php?id=<?php echo $row['ID'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
                    </td>
                </tr>
                <?php endwhile; ?>

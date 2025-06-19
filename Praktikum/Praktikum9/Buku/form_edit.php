@@ -1,6 +1,14 @@
 <?php
-include 'koneksi_db.php';
-include 'nav.php';
+session_start();
+if (!isset($_SESSION['login_Un51k4'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+
+<?php
+include '../koneksi_db.php';
+include '../nav.php';
 
 
 $id = $_GET['id'] ?? 0;
@@ -48,7 +56,7 @@ $row = $result->fetch_assoc();
            </div>
            <div class="mb-3">
                <label for="stok" class="form-label">Stok</label>
-               <input type="number" class="form-control" id="stok" name="stok" value="<?= $row['stok'] ?>" required>
+               <input type="number" class="form-control" id="stok" name="stok" value="<?= $row['Stok'] ?>" required>
            </div>
            <button type="submit" class="btn btn-success">Simpan Perubahan</button>
        </form>

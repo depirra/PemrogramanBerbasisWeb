@@ -1,5 +1,13 @@
 <?php
-include 'koneksi_db.php'; // Koneksi database
+session_start();
+if (!isset($_SESSION['login_Un51k4'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+
+<?php
+include '../koneksi_db.php'; // Koneksi database
 
 
 // Query untuk menampilkan data pesanan beserta nama pelanggan dan total harga
@@ -21,7 +29,7 @@ $result = $conn->query($query);
    <title>Daftar Pesanan</title>
 </head>
 <body>
-   <?php include 'nav.php' ?>
+   <?php include '../nav.php' ?>
    <div class="container mt-4">
        <h2>Daftar Pesanan</h2>
 
